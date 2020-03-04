@@ -69,3 +69,24 @@ def birthdayCakeCandles(ar):
             counter += 1
 
     return counter
+
+
+#https://www.hackerrank.com/challenges/time-conversion/problem
+def timeConversion(s):
+    splitted_time = s.split(':')
+    new_time = ""
+    hours = ''
+    if splitted_time[2][2] == 'A':
+        if splitted_time[0] == '12':
+            hours = '00'
+        else:
+            hours = splitted_time[0]
+        new_time = "{0}:{1}:{2}".format(hours, splitted_time[1], splitted_time[2].replace('AM', ''))
+    else:
+        if splitted_time[0] == '12':
+            hours = '12'
+        else:
+            hours = int(splitted_time[0])+12
+        new_time = "{0}:{1}:{2}".format(hours, splitted_time[1], splitted_time[2].replace('PM', ''))
+
+    return new_time
