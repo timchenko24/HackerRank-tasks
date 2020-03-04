@@ -34,3 +34,9 @@ def plusMinus(arr):
     frac_zero = zero / num_of_values
 
     print("{0:.6f}\n{1:.6f}\n{2:.6f}".format(frac_pos, frac_neg, frac_zero))
+
+
+#https://www.hackerrank.com/challenges/staircase/problem
+def staircase(n):
+    for i in range(1, n+1):
+        print(' ' * (n - i) + '#' * i)
