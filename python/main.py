@@ -57,3 +57,15 @@ def miniMaxSum(arr):
             continue
 
     print("{0} {1}".format(min_sum, max_sum))
+
+
+#https://www.hackerrank.com/challenges/birthday-cake-candles/problem
+def birthdayCakeCandles(ar):
+    max_candle_hight = max(ar)
+    counter = 0
+
+    for _, val in enumerate(ar):
+        if val == max_candle_hight:
+            counter += 1
+
+    return counter
