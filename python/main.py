@@ -14,3 +14,23 @@ def diagonalDifference(arr):
         j -= 1
     return abs(sum1 - sum2)
 
+
+#https://www.hackerrank.com/challenges/plus-minus/problem
+def plusMinus(arr):
+    num_of_values = len(arr)
+    pos = 0
+    neg = 0
+    zero = 0
+    for val in arr:
+        if val > 0:
+            pos += 1
+        elif val < 0:
+            neg += 1
+        else:
+            zero += 1
+
+    frac_pos = pos / num_of_values
+    frac_neg = neg / num_of_values
+    frac_zero = zero / num_of_values
+
+    print("{0:.6f}\n{1:.6f}\n{2:.6f}".format(frac_pos, frac_neg, frac_zero))
