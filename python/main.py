@@ -90,3 +90,42 @@ def timeConversion(s):
         new_time = "{0}:{1}:{2}".format(hours, splitted_time[1], splitted_time[2].replace('PM', ''))
 
     return new_time
+
+
+#https://www.hackerrank.com/challenges/grading/problem
+def gradingStudents(grades):
+    new_grades = []
+
+    for _, val in enumerate(grades):
+        if val < 38:
+            cur_grade = val
+        elif val % 5 >= 3:
+            cur_grade = 5 * round(val / 5)
+        else:
+            cur_grade = val
+
+        new_grades.append(cur_grade)
+
+    return new_grades
+
+
+if __name__ == '__main__':
+    grades = [73,67,38,33]
+    result = gradingStudents(grades)
+    print('\n'.join(map(str, result)))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
