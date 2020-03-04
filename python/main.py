@@ -109,10 +109,47 @@ def gradingStudents(grades):
     return new_grades
 
 
+#https://www.hackerrank.com/challenges/apple-and-orange/problem
+def countApplesAndOranges(s, t, a, b, apples, oranges):
+    apples_counter = 0
+    oranges_counter = 0
+
+    for _, val in enumerate(apples):
+        g = a + val
+        if g >= s and g <= t:
+            apples_counter += 1
+
+    for _, val in enumerate(oranges):
+        g = b + val
+        if g >= s and g <= t:
+            oranges_counter += 1
+
+    print("{0}\n{1}".format(apples_counter, oranges_counter))
+
 if __name__ == '__main__':
-    grades = [73,67,38,33]
-    result = gradingStudents(grades)
-    print('\n'.join(map(str, result)))
+    st = input().split()
+
+    s = int(st[0])
+
+    t = int(st[1])
+
+    ab = input().split()
+
+    a = int(ab[0])
+
+    b = int(ab[1])
+
+    mn = input().split()
+
+    m = int(mn[0])
+
+    n = int(mn[1])
+
+    apples = list(map(int, input().rstrip().split()))
+
+    oranges = list(map(int, input().rstrip().split()))
+
+    countApplesAndOranges(s, t, a, b, apples, oranges)
 
 
 
