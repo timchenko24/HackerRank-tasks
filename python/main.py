@@ -40,3 +40,20 @@ def plusMinus(arr):
 def staircase(n):
     for i in range(1, n+1):
         print(' ' * (n - i) + '#' * i)
+
+
+#https://www.hackerrank.com/challenges/mini-max-sum/problem
+def miniMaxSum(arr):
+    arr_len = len(arr)
+    min_sum = sum(arr)
+    max_sum = 0
+    for i in range(arr_len):
+        cur_sum = sum(arr) - arr[i]
+        if min_sum > cur_sum:
+            min_sum = cur_sum
+        if max_sum < cur_sum:
+            max_sum = cur_sum
+        else:
+            continue
+
+    print("{0} {1}".format(min_sum, max_sum))
