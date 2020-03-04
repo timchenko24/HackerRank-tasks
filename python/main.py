@@ -126,30 +126,25 @@ def countApplesAndOranges(s, t, a, b, apples, oranges):
 
     print("{0}\n{1}".format(apples_counter, oranges_counter))
 
+
+#https://www.hackerrank.com/challenges/kangaroo/problem
+def kangaroo(x1, v1, x2, v2):
+    if v2 > v1 or v1 == v2:
+        return "NO";
+
+    return "YES" if (x2 - x1) % (v1 - v2) == 0 else "NO"
+
+
 if __name__ == '__main__':
-    st = input().split()
+    x1 = 0
 
-    s = int(st[0])
+    v1 = 3
 
-    t = int(st[1])
+    x2 = 4
 
-    ab = input().split()
+    v2 = 2
 
-    a = int(ab[0])
-
-    b = int(ab[1])
-
-    mn = input().split()
-
-    m = int(mn[0])
-
-    n = int(mn[1])
-
-    apples = list(map(int, input().rstrip().split()))
-
-    oranges = list(map(int, input().rstrip().split()))
-
-    countApplesAndOranges(s, t, a, b, apples, oranges)
+    print(kangaroo(x1, v1, x2, v2))
 
 
 
