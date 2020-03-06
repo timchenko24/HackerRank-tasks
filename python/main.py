@@ -1,5 +1,5 @@
 import math
-
+import numpy as np
 
 #https://www.hackerrank.com/challenges/diagonal-difference/problem
 def diagonalDifference(arr):
@@ -172,12 +172,35 @@ def breakingRecords(scores):
 
     return highest_score, lowest_score
 
+
+#https://www.hackerrank.com/challenges/magic-square-forming/problem
+def formingMagicSquare(s):
+    costs = [[], [], []]
+    stack = []
+    missing_values = []
+    s_list = [item for row in s for item in row]
+
+    for i in range(1, 10):
+        if i not in s_list:
+            missing_values.append(i)
+
+    for m in missing_values:
+        for i in range(len(s)):
+            for j in range(len(s[i])):
+                costs[i].append(abs(m - s[i][j]))
+
+    return costs
+
+
+
 if __name__ == '__main__':
-    scores = [3, 4, 21, 36, 10,28, 35, 5, 24, 42]
+    s = [[4, 9, 2],
+         [3, 5, 7],
+         [8, 1, 5]]
 
-    h, l = breakingRecords(scores)
+    a = formingMagicSquare(s)
 
-    print("{0} {1}".format(h, l))
+    print(a)
 
 
 
