@@ -135,16 +135,30 @@ def kangaroo(x1, v1, x2, v2):
     return "YES" if (x2 - x1) % (v1 - v2) == 0 else "NO"
 
 
+
+#https://www.hackerrank.com/challenges/between-two-sets/problem
+def getTotalX(a, b):
+    max_a = max(a)
+    min_b = min(b)
+    a_factor = list()
+    result = list()
+
+    for i in range(max_a, min_b + 1):
+        if all(i % x == 0 for x in a):
+            a_factor.append(i)
+
+    for x in a_factor:
+        if all(elem % x == 0 for elem in b):
+            result.append(x)
+
+    return len(result)
+
 if __name__ == '__main__':
-    x1 = 0
+    arr = [2, 4]
 
-    v1 = 3
+    brr = [16, 32, 96]
 
-    x2 = 4
-
-    v2 = 2
-
-    print(kangaroo(x1, v1, x2, v2))
+    print(getTotalX(arr, brr))
 
 
 
