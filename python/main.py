@@ -153,12 +153,31 @@ def getTotalX(a, b):
 
     return len(result)
 
+
+#https://www.hackerrank.com/challenges/breaking-best-and-worst-records/problem
+def breakingRecords(scores):
+    game_num = len(scores)
+    min_score = scores[0]
+    max_score = scores[0]
+    highest_score = 0
+    lowest_score = 0
+
+    for i in range(game_num):
+        if scores[i] > min_score:
+            highest_score += 1
+            min_score = scores[i]
+        elif scores[i] < max_score:
+            lowest_score += 1
+            max_score = scores[i]
+
+    return highest_score, lowest_score
+
 if __name__ == '__main__':
-    arr = [2, 4]
+    scores = [3, 4, 21, 36, 10,28, 35, 5, 24, 42]
 
-    brr = [16, 32, 96]
+    h, l = breakingRecords(scores)
 
-    print(getTotalX(arr, brr))
+    print("{0} {1}".format(h, l))
 
 
 
