@@ -4,3 +4,6 @@ SELECT COUNT(CITY) - COUNT(DISTINCT CITY) AS COUNT_CITY FROM STATION;
 #https://www.hackerrank.com/challenges/weather-observation-station-5/problem
 SELECT TOP(1) CITY, LEN(CITY) AS L FROM STATION ORDER BY L ASC, CITY ASC;
 SELECT TOP(1) CITY, LEN(CITY) AS L FROM STATION ORDER BY L DESC, CITY ASC;
+
+#https://www.hackerrank.com/challenges/weather-observation-station-6/problem
+SELECT DISTINCT CITY FROM STATION WHERE CITY LIKE '[AEIOU]%';
