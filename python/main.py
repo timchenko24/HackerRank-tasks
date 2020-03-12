@@ -219,12 +219,29 @@ def divisibleSumPairs(n, k, ar):
 
     return counter
 
-if __name__ == '__main__':
-    ar = [1, 3, 2, 6, 1, 2]
-    n = 6
-    k = 3
 
-    a = divisibleSumPairs(n, k, ar)
+#https://www.hackerrank.com/challenges/migratory-birds/problem
+def migratoryBirds(arr):
+    freq = 0
+    temp = 0
+    arr_set = set(arr)
+
+    for _, val2 in enumerate(arr_set):
+        for _, val1 in enumerate(arr):
+            if val2 == val1:
+                temp += 1
+        if temp > freq:
+            index = val2
+            freq = temp
+            temp = 0
+
+    return index
+
+
+if __name__ == '__main__':
+    arr = [1, 2, 3, 4, 5, 4, 3, 2, 1, 3, 4]
+
+    a = migratoryBirds(arr)
 
     print(a)
 
