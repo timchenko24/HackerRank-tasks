@@ -192,13 +192,39 @@ def formingMagicSquare(s):
     return costs
 
 
+#https://www.hackerrank.com/challenges/the-birthday-bar/problem
+def birthday(s, d, m):
+    counter = 0
+    temp_sum = 0
+
+    for i in range(0, len(s)):
+        for j in range(0, m):
+            if i + j < len(s):
+                temp_sum += s[i + j]
+        if temp_sum == d:
+            counter += 1
+        temp_sum = 0
+
+    return counter
+
+
+#https://www.hackerrank.com/challenges/divisible-sum-pairs/problem
+def divisibleSumPairs(n, k, ar):
+    counter = 0
+
+    for i in range(0, n):
+        for j in range(0, n):
+            if (ar[i] + ar[j]) % k == 0 and i < j:
+                counter += 1
+
+    return counter
 
 if __name__ == '__main__':
-    s = [[4, 9, 2],
-         [3, 5, 7],
-         [8, 1, 5]]
+    ar = [1, 3, 2, 6, 1, 2]
+    n = 6
+    k = 3
 
-    a = formingMagicSquare(s)
+    a = divisibleSumPairs(n, k, ar)
 
     print(a)
 
