@@ -192,13 +192,27 @@ def formingMagicSquare(s):
     return costs
 
 
+#https://www.hackerrank.com/challenges/the-birthday-bar/problem
+def birthday(s, d, m):
+    counter = 0
+    temp_sum = 0
+
+    for i in range(0, len(s)):
+        for j in range(0, m):
+            if i + j < len(s):
+                temp_sum += s[i + j]
+        if temp_sum == d:
+            counter += 1
+        temp_sum = 0
+
+    return counter
 
 if __name__ == '__main__':
-    s = [[4, 9, 2],
-         [3, 5, 7],
-         [8, 1, 5]]
+    s = [1, 2, 1, 3, 2]
+    d = 3
+    m = 2
 
-    a = formingMagicSquare(s)
+    a = birthday(s, d, m)
 
     print(a)
 
