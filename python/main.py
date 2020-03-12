@@ -207,12 +207,24 @@ def birthday(s, d, m):
 
     return counter
 
-if __name__ == '__main__':
-    s = [1, 2, 1, 3, 2]
-    d = 3
-    m = 2
 
-    a = birthday(s, d, m)
+#https://www.hackerrank.com/challenges/divisible-sum-pairs/problem
+def divisibleSumPairs(n, k, ar):
+    counter = 0
+
+    for i in range(0, n):
+        for j in range(0, n):
+            if (ar[i] + ar[j]) % k == 0 and i < j:
+                counter += 1
+
+    return counter
+
+if __name__ == '__main__':
+    ar = [1, 3, 2, 6, 1, 2]
+    n = 6
+    k = 3
+
+    a = divisibleSumPairs(n, k, ar)
 
     print(a)
 
