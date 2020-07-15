@@ -29,5 +29,16 @@ function hurdleRace(k, height) {
     return k >= maxHeight ? 0 : maxHeight - k;
 }
 
-const arr = [1, 6, 3, 5, 2]
-console.log(hurdleRace(4, arr))
+//https://www.hackerrank.com/challenges/angry-professor/problem
+function angryProfessor(k, a) {
+    let counter = 0;
+    a.forEach((value) => {
+        if (value <= 0) {
+            counter++;
+        }
+    })
+    return counter >= k ? 'NO' : 'YES';
+}
+
+const arr = [0, -1, 2, 1]
+console.log(angryProfessor(2, arr))
