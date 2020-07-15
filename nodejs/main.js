@@ -40,5 +40,17 @@ function angryProfessor(k, a) {
     return counter >= k ? 'NO' : 'YES';
 }
 
-const arr = [0, -1, 2, 1]
-console.log(angryProfessor(2, arr))
+//https://www.hackerrank.com/challenges/utopian-tree/problem
+function utopianTree(n) {
+    let height = 1;
+    for (let i = 1; i <= n; i++) {
+        if (i % 2 === 0) {
+            height++;
+        } else {
+            height *= 2;
+        }
+    }
+    return height;
+}
+
+console.log(utopianTree(55))
