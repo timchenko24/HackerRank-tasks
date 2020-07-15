@@ -23,5 +23,11 @@ function pageCount(n, p) {
     return numberOfTurnsFromStart > numberOfTurnsFromEnd ? numberOfTurnsFromEnd : numberOfTurnsFromStart;
 }
 
-const arr = [10, 20, 20, 10, 10, 30, 50, 10, 20]
-console.log(pageCount(7, 2))
+//https://www.hackerrank.com/challenges/the-hurdle-race/problem
+function hurdleRace(k, height) {
+    const maxHeight = Math.max(...height);
+    return k >= maxHeight ? 0 : maxHeight - k;
+}
+
+const arr = [1, 6, 3, 5, 2]
+console.log(hurdleRace(4, arr))
